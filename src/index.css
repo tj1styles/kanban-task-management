@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+/* rgb(33,33,45)=> Dark Grey
+  rgb(44,44,56)=> Light Grey
+  rgb(100,95,198)=> Blue
+  rgb(73,195,230)=> Cyan (circle)
+
+*/
+/* @apply */
+
+.large_card {
+  @apply bg-primary lg:text-left lg:p-3 mr-5 rounded-r-full dark:text-opacity-70 lg:text-opacity-90 lg:mt-[5px] lg:mb-[5px] lg:pl-[30px];
+}
+
+.large_card_else {
+  @apply dark:text-white lg:text-black lg:text-opacity-90 dark:text-opacity-70 lg:pl-[30px] lg:mt-[15px] lg:mb-[15px];
+}
+.md_card {
+  @apply dark:text-white md:text-white md:pt-[10px] md:pb-[10px] md:my-[10px] md:mr-[60px] md:pl-[30px] md:mt-[15px];
+}
+.md_card_else {
+  @apply md:text-opacity-90 dark:text-opacity-70 md:pl-[30px] md:mt-[15px] md:mb-[10px];
+}
+
+.dark {
+  @apply bg-DarkSecondary text-white;
+}
+.wow::-webkit-scrollbar{
+  display: none;
+}
+.toggleDarkBtn {
+  position: relative;
+  display: inline-block;
+  width: 65px;
+  height: 41px;
+  outline: none;
+}
+.toggleDarkBtn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  outline: none;
+}
+.slideBtnTg {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+.slideBtnTg:before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 5px;
+  bottom: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: white;
+  outline: none;
+}
+input:checked + .slideBtnTg {
+  background-color: rgb(100, 95, 198);
+  outline: none;
+}
+input:focus + .slideBtnTg {
+  box-shadow: 0 0 1px #2196f3;
+  outline: none;
+}
+input:checked + .slideBtnTg:before {
+  -webkit-transform: translateX(29px);
+  -ms-transform: translateX(29px);
+  transform: translateX(29px);
+  background-color: white;
+  outline: none;
+}
+.slideBtnTg.round {
+  border-radius: 34px;
+  outline: none;
+}
+.slideBtnTg.round:before {
+  border-radius: 50%;
+  outline: none;
+  background-color: rgb(224, 224, 231);
+}
